@@ -50,11 +50,6 @@ struct StoryBrain {
     
     mutating func checkChoice(userSelect: String) {
         let currentStory = story[currentStoryNumber]
-        if userSelect == currentStory.choice1 {
-            currentStoryNumber = currentStory.choice1Destination
-        } else {
-            currentStoryNumber = currentStory.choice2Destination
-        }
+        currentStoryNumber = userSelect == currentStory.choice1 ? currentStory.choice1Destination : currentStory.choice2Destination
     }
-    
 }
